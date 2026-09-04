@@ -20,8 +20,6 @@ This repository documents the environment setup for our Embedded Systems course 
 | **System Update** | ✅ Done | System packages updated and upgraded |
 | **ROS 2 Jazzy Installation** | ✅ Done | ROS 2 desktop packages installed |
 | **ROS 2 Environment Setup** | ✅ Done | Environment variables configured in bashrc |
-| **Python Dependencies** | ✅ Done | OpenCV and pip installed |
-| **Verification Tests** | ✅ Done | Tests till now passed successfully |
 
 ---
 
@@ -41,6 +39,8 @@ This repository documents the environment setup for our Embedded Systems course 
 | **Gazebo** | Harmonic | Simulation environment |
 | **Python** | 3.10+ | Programming language |
 | **Git** | Latest | Version control |
+| **RQt** | Included with Desktop Install | GUI toolkit for introspecting and debugging ROS 2 (topics, graphs, logs) |
+| **TurtleSim** | Included with Desktop Install | Beginner-friendly node for learning ROS 2 concepts (topics, nodes, services) |
 
 ---
 
@@ -58,9 +58,19 @@ sudo apt update && sudo apt upgrade -y
 
 ### Step 2: Install ROS 2 Jazzy
 
-**For this you can go to the official documentation of ROS 2 Jazzy **
+**Option A: Desktop Install (Recommended)** - Includes ROS, RViz, demos, and tutorials:
 
-https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
+```bash
+sudo apt install ros-jazzy-desktop
+```
+
+**Option B: ROS-Base Install (Bare Bones)** - Only communication libraries, message packages, and command line tools (no GUI tools):
+
+```bash
+sudo apt install ros-jazzy-ros-base
+```
+
+**Expected Output:** ROS 2 packages will be downloaded and installed. This may take 5-10 minutes depending on internet speed.
 
 ---
 
@@ -106,6 +116,3 @@ ros2 -h
 ```bash
 ros2 pkg list
 ```
-
-```bash
-gazebo --version
