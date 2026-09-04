@@ -109,4 +109,3 @@ ros2 pkg list
 
 ```bash
 gazebo --version
-```
